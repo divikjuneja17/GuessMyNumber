@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* html selector can have font-size property */
+  font-size: 62.5%; /* makes font look consistent on mobile and desktop devices otherwise font looks messed up on mobile devices. If we specify it here, then only it works. */
+}
+
+body {
+  font-family: 'Press Start 2P', sans-serif;
+  color: #eee;
+  background-color: #222;
+  /* background-color: #60b347; */
+}
+
+/* LAYOUT */
+header {
+  position: relative;
+  height: 35vh;
+  border-bottom: 7px solid #eee;
+}
+
+h1 {
+  font-size: 4rem;
+  text-align: center;
+  width: 100%; /* width is specified 100% so that width remains 100% throughout every viewport */
+
+  /* To start, set the position of the div containing the text to relative. Then you want to style the paragraph within the div. First, set its position to absolute so that it’s taken out of the normal document flow. Then set the left and top properties to 50%. This tells the browser to line up the left and top edge of the paragraph with the center of the page horizontally and vertically (ie. 50% to the right and down the page). The problem is we don’t want the edges of the paragraph to be lined up in the middle of the page — we want the center of the paragraph to be lined up in the middle of the page.
+
+  That’s where the CSS transform property comes in. Using the transformation method known as the translate() method, we can move the paragraph along the X- and the Y-axis. To truly center the paragraph, we want to move it 50% to the left and up from its current position. That will tell the browser to put the center of the paragraph in the center of the page. Using negative numbers with the translate() method will move the element left or up. You can also use percentages to specify the translation. Percentages move the element a horizontal distance proportional to its width, or a vertical distance proportional to its height. */
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.between {
+  font-size: 1.4rem;
+  position: absolute;
+  /* to place at the right top position of the webpage */
+  top: 2rem;
+  right: 2rem;
+}
+
+.again {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+}
+
+.btn {
+  border: none;
+  background-color: #eee;
+  color: #222;
+  font-size: 2rem;
+  font-family: inherit; /* inherited from font specified in body selector */
+  padding: 2rem 3rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ccc;
+}
+
+.number {
+  background: #eee;
+  color: #333;
+  font-size: 6rem;
+  width: 15rem;
+  padding: 3rem 0rem;
+  text-align: center;
+  position: absolute;
+  bottom: 0; /* bottom: 0 lets you place your container on the border line of <header> element */
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+main {
+  height: 65vh;
+  color: #eee;
+  display: flex;
+  align-items: center; /* for vertical alignment */
+  justify-content: space-around; /* for horizontal alignment */
+}
+
+.left {
+  width: 52rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.guess {
+  background: none;
+  border: 4px solid #eee;
+  font-family: inherit;
+  color: inherit; /* inherited from main selector */
+  font-size: 5rem;
+  padding: 2.5rem;
+  width: 25rem; /* width of the input field */
+  text-align: center;
+  display: block;
+  margin-bottom: 3rem;
+}
+
+.right {
+  width: 52rem;
+  font-size: 2rem;
+}
+
+.message {
+  margin-bottom: 8rem;
+  height: 3rem;
+}
+
+.label-score {
+  margin-bottom: 2rem;
+}
